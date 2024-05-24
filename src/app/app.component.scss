@@ -1,0 +1,49 @@
+@import "../styles.scss";
+
+.app-bar-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-drawer-container {
+    height: 100vh;
+}
+
+.mat-drawer {
+    min-width: 150px;
+}
+
+.mat-list-item {
+    text-align: center;
+}
+
+.router-outlet {
+    width: 100%;
+    height: 100vh;
+}
+
+.light-theme .menu-toolbar{
+    background-position: 50%;
+    background-repeat: no-repeat !important;
+    background-image: url("../assets/images/angular-logo.svg");
+}
+
+.dark-theme .menu-toolbar{
+    background-color: #444444;
+    background-position: 50%;
+    background-repeat: no-repeat !important;
+    background-image: url("../assets/images/angular-logo.svg");
+}
+
+.menu-button{
+    width: 100%;
+}
+
+.light-theme .main-toolbar {
+    background-color: #ffffff;
+    box-shadow: 1px 1px 1px #dddddd;
+    color: mat-color($dash-light-blue);
+}
+
+.light-theme .menu-toolbar{
+    background-color: #ffffff;
+}
