@@ -5,8 +5,8 @@
 
 @include mat.core();
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: small;}
+html, body { height: 100%; padding: 0px;}
+body { margin: 0; padding: 0px; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: small;}
 
 $red-palette: (
     50: #FFEBEE,
@@ -23,6 +23,7 @@ $red-palette: (
     A200: #FF5252,
     A400: #FF1744,
     A700: #D50000,
+    H100: #990000,
         contrast: (
         50: #000000,
         100: #000000,
@@ -38,6 +39,7 @@ $red-palette: (
         A200: #FFFFFF,
         A400: #FFFFFF,
         A700: #FFFFFF,
+        H100: #ffffff
     )
 );
 
@@ -67,37 +69,68 @@ $blue-palette: (
         700: #ffffff,
         800: #ffffff,
         900: #ffffff,
-        A100: #000000,
+        A100: #ffffff,
         A200: #FFFFFF,
         A400: #FFFFFF,
         A700: #FFFFFF,
     )
 );
 
+$green-palette: (
+    50: #E8F5E9,
+    100:#C8E6C9,
+    200:#A5D6A7,
+    300:#81C784,
+    400:#66BB6A,
+    500:#4CAF50,
+    600:#43A047,
+    700:#388E3C,
+    800:#2E7D32,
+    900:#1B5E20,
+    A100:#B9F6CA,
+    A200:#69F0AE,
+    A400:#00E676,
+    A700:#00C853,
+    contrast: (
+        50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #000000,
+        400: #000000,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #000000,
+        A200: #ffffff,
+        A400: #FFFFFF,
+        A700: #FFFFFF,
+    )
+);
 
-$dash-dark-blue: mat.define-palette($blue-palette, 900);
-$dash-light-blue: mat.define-palette($blue-palette, 300);
-$dash-warning: mat.define-palette($red-palette, 700);
+$color-one: mat.define-palette($red-palette, H100);
+$color-two: mat.define-palette($red-palette, A700);
+$color-warn: mat.define-palette($red-palette, 700);
 
-$dash-dark-theme: mat.define-dark-theme((
+$color-dark-theme: mat.define-dark-theme((
     color: (
-        primary: $dash-dark-blue,
-        accent: $dash-light-blue,
-        warn: $dash-warning
+        primary: $color-one,
+        accent: $color-two,
+        warn: $color-warn
     )
 ));
 
-$dash-light-theme: mat.define-light-theme((
+$color-light-theme: mat.define-light-theme((
     color: (
-        primary: $dash-light-blue,
-        accent: $dash-dark-blue,
-        warn: $dash-warning
+        primary: $color-two,
+        accent: $color-one,
+        warn: $color-warn
     )
 ));
 
-@include mat.all-component-themes($dash-light-theme);
+@include mat.all-component-themes($color-dark-theme);
 
-.dark-theme {
-    @include mat.all-component-themes($dash-dark-theme);
+.light-theme {
+    @include mat.all-component-colors($color-light-theme);
 }
-

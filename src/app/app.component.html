@@ -1,29 +1,45 @@
-<body #body class="light-theme">
+<body #body class="dark-theme">
   <mat-drawer-container>
-    <mat-drawer #drawer mode="side" [opened]="true">
-      <mat-toolbar class="menu-toolbar">
-      </mat-toolbar>
+    <mat-drawer #startDrawer mode="side" [opened]="false">
       <mat-nav-list role="list">
         <mat-list-item role="listitem" [routerLink]="'/linkOne'">
-          Link 1
+           <span class="side-nav-link">Link 1</span>
         </mat-list-item>
       </mat-nav-list>
       <mat-nav-list role="list">
         <mat-list-item role="listitem" [routerLink]="'/linkTwo'">
-          Link2
+          <span class="side-nav-link">Link 2</span>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer #endDrawer id="end-drawer" mode="over" [opened]="false" [position]="'end'">
+      <mat-nav-list role="list">
+        <mat-list-item role="listitem" [routerLink]="'/linkOne'">
+          <span class="side-nav-link">Link 1</span>
+        </mat-list-item>
+      </mat-nav-list>
+      <mat-nav-list role="list">
+        <mat-list-item role="listitem" [routerLink]="'/linkTwo'">
+          <span class="side-nav-link">Link 2</span>
         </mat-list-item>
       </mat-nav-list>
     </mat-drawer>
     <mat-drawer-content>
-      <mat-toolbar class="main-toolbar" color="accent">
-        <button mat-icon-button class="icon" aria-label="Menu icon" (click)="drawer.toggle()">
-          <mat-icon>menu</mat-icon>
+      <mat-toolbar class="main-toolbar">
+        <button mat-icon-button id="left-panel-button" aria-label="Menu icon" (click)="startDrawer.toggle()">
+          <span class="material-symbols-outlined">dock_to_right</span>
         </button>
-        <span>Angular Template</span>
+        <span id="title"></span>
         <span class="app-bar-spacer"></span>
         <span>
-          <button mat-icon-button class="icon" aria-label="Theme icon" (click)="toggleTheme()">
-            <mat-icon>water_drop</mat-icon>
+          <button mat-icon-button id="bottom-sheet-icon" aria-label="Menu icon" (click)="openBottomSheetMenu()">
+            <span class="material-symbols-outlined">dock_to_bottom</span>
+          </button>
+          <button mat-icon-button id="right-panel-button" aria-label="Menu icon" (click)="endDrawer.toggle()">
+            <span class="material-symbols-outlined">dock_to_left</span>
+          </button>
+          <button mat-icon-button aria-label="Theme icon" (click)="toggleTheme()">
+            <mat-icon fontIcon="water_drop"></mat-icon>
           </button>
         </span>
       </mat-toolbar>

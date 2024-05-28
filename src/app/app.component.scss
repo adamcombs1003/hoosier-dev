@@ -9,11 +9,7 @@
 }
 
 .mat-drawer {
-    min-width: 150px;
-}
-
-.mat-list-item {
-    text-align: center;
+    min-width: 200px;
 }
 
 .router-outlet {
@@ -21,29 +17,50 @@
     height: 100vh;
 }
 
-.light-theme .menu-toolbar{
-    background-position: 50%;
-    background-repeat: no-repeat !important;
-    background-image: url("../assets/images/angular-logo.svg");
+.side-nav-link {
+    font-size: 18px;
+    color: #ffffff;
 }
 
-.dark-theme .menu-toolbar{
-    background-color: #444444;
-    background-position: 50%;
-    background-repeat: no-repeat !important;
-    background-image: url("../assets/images/angular-logo.svg");
+.light-theme .mat-drawer {
+    background-color: mat-color($color-one);
 }
 
-.menu-button{
-    width: 100%;
+.dark-theme .mat-drawer {
+    background-color: mat-color($color-two);
 }
 
 .light-theme .main-toolbar {
-    background-color: #ffffff;
-    box-shadow: 1px 1px 1px #dddddd;
-    color: mat-color($dash-light-blue);
+    border-bottom: 2px solid mat-color($color-one);
 }
 
-.light-theme .menu-toolbar{
-    background-color: #ffffff;
+.dark-theme .main-toolbar {
+    border-bottom: 2px solid mat-color($color-two);
+}
+
+.material-symbols-outlined {
+    color: #777777;
+}
+
+#title {
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+// #bottom-sheet-icon {
+//     cursor: pointer;
+//     position: fixed;
+//     left: 50%;
+//     bottom: -10px;
+//     transform: translate(-50%, -50%);
+//     margin: 0 auto;
+// }
+
+#bottom-sheet-button {
+}
+
+#right-panel-button {
+}
+
+#left-panel-icon {
 }

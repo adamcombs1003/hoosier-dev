@@ -1,4 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +8,15 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-template';
+  constructor(private bottomSheet: MatBottomSheet){}
+
   @ViewChild('body') bodyRef!: ElementRef;
 
-  toggleTheme(){
+  openBottomSheetMenu() {
+    this.bottomSheet.open(BottomSheetComponent);
+  }
+
+  toggleTheme() {
     this.bodyRef.nativeElement.classList.toggle('dark-theme');
     this.bodyRef.nativeElement.classList.toggle('light-theme');
   }
