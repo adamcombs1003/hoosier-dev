@@ -10,7 +10,6 @@ export class BottomSheetComponent {
   constructor(private bottomSheetMenuRef : MatBottomSheetRef<BottomSheetComponent>) {}
 
   openLink(event: MouseEvent): void {
-      this.bottomSheetMenuRef.dismiss();
       event.preventDefault();
   }
 }
